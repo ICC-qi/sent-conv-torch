@@ -6,6 +6,8 @@ This code implements Kim (2014) sentence convolution code in Torch with GPUs. It
 
 To make data in hdf5 format, run the following (with word2vec .bin path and choice of dataset):
 数据预处理，得到MR_word_mapping.txt和MR.hdf5
+MR_word_mapping.txt：18766个单词，数据集的所有单词和序号(不重复地从neg到pos的排列)
+MR.hdf5：
 
     python preprocess.py MR /path/to/word2vec.bin
     icc-qi@iccqi-Precision-Tower-5810:~/sent-conv-torch-master$ python preprocess.py MR /home/icc-qi/sent-conv-torch-master/GoogleNews-vectors-negative300.bin
