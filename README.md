@@ -8,6 +8,7 @@ To make data in hdf5 format, run the following (with word2vec .bin path and choi
 数据预处理，得到MR_word_mapping.txt和MR.hdf5
 
     python preprocess.py MR /path/to/word2vec.bin
+    icc-qi@iccqi-Precision-Tower-5810:~/sent-conv-torch-master$ python preprocess.py MR /home/icc-qi/sent-conv-torch-master/GoogleNews-vectors-negative300.bin
 
 To run training with GPUs:
 
