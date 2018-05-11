@@ -22,7 +22,7 @@ The training pipeline requires Python hdf5 (the h5py module) and the following l
   * hdf5
   * cudnn
 
-Training on word2vec architecture models requires downloading [word2vec](https://code.google.com/p/word2vec/) and unzipping. Simply run the script
+Training on word2vec architecture models requires downloading [word2vec](https://code.google.com/p/word2vec/) and unzipping. Simply run the script下载GoogleNews-vectors-negative300.bin.gz
 
     ./get_word2vec.sh
 
@@ -41,7 +41,7 @@ The script outputs:
   * the `DATASET.hdf5` file with the data matrix and word2vec embeddings
   * a `DATASET.txt` file with a word-index dictionary for the word embeddings
 
-### Training on custom datasets
+### Training on custom datasets训练自己的数据集
 
 We allow training on arbitrary text datasets. They should be formatted in the same way as the sample data, with one sentence per line, and the first word the class label (0-indexed). Our code handles most parsing of punctuation, possessives, capitalization, etc.
 
