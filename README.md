@@ -10,12 +10,20 @@ To make data in hdf5 format, run the following (with word2vec .bin path and choi
 
 MR_word_mapping.txt：18766个单词，数据集的所有单词和序号(不重复地从neg到pos的排列)
 
-MR.hdf5：'w2v' 词向量18766*300;
+MR.hdf5：
+
+'w2v' 词向量18766*300;
+
 'train' 10662*64 每一行前四个为1，是*padding*,然后每个数代表这个位置上的单词在MR_word_mapping.txt里面的序号，后面用1补充到每一行总共64个数字;
+
 'train_label' 10662 前一半是1，后一半是2，代表类别;
+
 'test'
+
 'test_label'
+
 'dev'
+
 'dev_label'
 
 
