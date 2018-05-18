@@ -8,23 +8,15 @@ To make data in hdf5 format, run the following (with word2vec .bin path and choi
 
 数据预处理，得到MR_word_mapping.txt和MR.hdf5
 
-MR_word_mapping.txt：18766个单词，数据集的所有单词和序号(不重复地从neg到pos的排列)
-
-MR.hdf5：
-
-'w2v' ：词向量18766*300;
-
-'train' ：10662*64 每一行前四个为1，是*padding*,然后每个数代表这个位置上的单词在MR_word_mapping.txt里面的序号，后面用1补充到每一行总共64个数字;
-
-'train_label' ：10662 前一半是1，后一半是2，代表类别;
-
-'test'：
-
-'test_label'：
-
-'dev'：
-
-'dev_label'：
++ MR_word_mapping.txt：18766个单词，数据集的所有单词和序号(不重复地从neg到pos的排列)
++ MR.hdf5：
+ - 'w2v' ：词向量18766*300;
+ - 'train' ：10662*64 每一行前四个为1，是*padding*,然后每个数代表这个位置上的单词在MR_word_mapping.txt里面的序号，后面用1补充到每一行总共64个数字;
+ - 'train_label' ：10662 前一半是1，后一半是2，代表类别;
+ - 'test'：
+ - 'test_label'：
+ - 'dev'：
+ - 'dev_label'：
 
 
     python preprocess.py MR /path/to/word2vec.bin
@@ -180,24 +172,22 @@ This code is based on Kim (2014) and the corresponding Theano [code](https://git
 
     Srivastava, R. K., Greff, K., & Schmidhuber, J. (2015). Training very deep networks. In Advances in Neural Information Processing Systems (pp. 2368-2376).
 
-### A Small test
+## A Small test
 
 CNNinput.py:输入语句，自动转化为索引数字，(1,64)的向量，作为CNN的输入。
         
-        $ python CNNinput.py
-        
+        ```
+        $python CNNinput.py
         Please input:no movement , no yuks , not much of anything
-        
         [1, 1, 1, 1, '154', '8867', '3', '154', '8868', '3', '97', '98', '22', '754', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-        
         done
-        
+
         $th
-        >require 'nn';require 'cudnn';require 'cunn';
-        >model=torch.load('/home/icc-qi/sent-conv-torch-master/results1/20180514_1644_model_1.t7').model
+        > require 'nn';require 'cudnn';require 'cunn';
+        > model=torch.load('/home/icc-qi/sent-conv-torch-master/results1/20180514_1644_model_1.t7').model
     >inputs=torch.Tensor{1,1,1,1,154,8867,3,154,8868,3,97,98,22,754,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}:reshape(1,64):cuda()
         >outputs=model:forward(inputs)
         >outputs
        -0.0009 -7.0501
        [torch.CudaTensor of size 1x2]
-        
+        ```
