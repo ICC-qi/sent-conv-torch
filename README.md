@@ -184,7 +184,7 @@ This code is based on Kim (2014) and the corresponding Theano [code](https://git
 
 CNNinput.py:输入语句，自动转化为索引数字，1*64的向量，作为CNN的输入。
         
-        $python CNNinput.py
+        $ python CNNinput.py
         Please input:no movement , no yuks , not much of anything
         [1, 1, 1, 1, '154', '8867', '3', '154', '8868', '3', '97', '98', '22', '754', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
         done
