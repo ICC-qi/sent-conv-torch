@@ -18,9 +18,8 @@ To make data in hdf5 format, run the following (with word2vec .bin path and choi
  - 'dev'：
  - 'dev_label'：
 
-
-    python preprocess.py MR /path/to/word2vec.bin
-    icc-qi@iccqi-Precision-Tower-5810:~/sent-conv-torch-master$ python preprocess.py MR /home/icc-qi/sent-conv-torch-master/GoogleNews-vectors-negative300.bin
+    `python preprocess.py MR /path/to/word2vec.bin
+    icc-qi@iccqi-Precision-Tower-5810:~/sent-conv-torch-master$ python preprocess.py MR /home/icc-qi/sent-conv-torch-master/GoogleNews-vectors-negative300.bin`
 
 To run training with GPUs:
 
@@ -184,7 +183,7 @@ CNNinput.py:输入语句，自动转化为索引数字，(1,64)的向量，作�
     $th
     > require 'nn';require 'cudnn';require 'cunn';
     > model=torch.load('/home/icc-qi/sent-conv-torch-master/results1/20180514_1644_model_1.t7').model
-    >inputs=torch.Tensor{1,1,1,1,154,8867,3,154,8868,3,97,98,22,754,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}:reshape(1,64):cuda()
+    > inputs=torch.Tensor{1,1,1,1,154,8867,3,154,8868,3,97,98,22,754,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}:reshape(1,64):cuda()
     > outputs=model:forward(inputs)
     > outputs
     -0.0009 -7.0501
