@@ -175,19 +175,18 @@ This code is based on Kim (2014) and the corresponding Theano [code](https://git
 ## A Small test
 
 CNNinput.py:输入语句，自动转化为索引数字，(1,64)的向量，作为CNN的输入。
-        
-        ```
-        $python CNNinput.py
-        Please input:no movement , no yuks , not much of anything
-        [1, 1, 1, 1, '154', '8867', '3', '154', '8868', '3', '97', '98', '22', '754', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-        done
+    
+    $python CNNinput.py
+    Please input:no movement , no yuks , not much of anything
+    [1, 1, 1, 1, '154', '8867', '3', '154', '8868', '3', '97', '98', '22', '754', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+    done
 
-        $th
-        > require 'nn';require 'cudnn';require 'cunn';
-        > model=torch.load('/home/icc-qi/sent-conv-torch-master/results1/20180514_1644_model_1.t7').model
-    >inputs=torch.Tensor{1,1,1,1,154,8867,3,154,8868,3,97,98,22,754,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}:reshape(1,64):cuda()
-        >outputs=model:forward(inputs)
-        >outputs
-       -0.0009 -7.0501
-       [torch.CudaTensor of size 1x2]
-        ```
+    $th
+    > require 'nn';require 'cudnn';require 'cunn';
+    > model=torch.load('/home/icc-qi/sent-conv-torch-master/results1/20180514_1644_model_1.t7').model
+    >inputs=torch.Tensor{1,1,1,1,154,8867,3,154,8868,3,97,98,22,754,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}:reshape(1,64):cuda()
+    > outputs=model:forward(inputs)
+    > outputs
+    -0.0009 -7.0501
+    [torch.CudaTensor of size 1x2]
+        
