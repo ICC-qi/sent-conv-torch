@@ -190,3 +190,6 @@ CNNinput.py:输入语句，自动转化为索引数字，(1,64)的向量，作�
     -0.0009 -7.0501
     [torch.CudaTensor of size 1x2]
         
+## RebuildCNN
+
+因为nn.gModule不适合修改，所以使用cunn重新搭建了模型，见rebuildCNN.lua，并复制参数到新的网络中。经过测试（与test.lua）得到同样的输出。输出是300维向量，去掉了后面分类的操作。
