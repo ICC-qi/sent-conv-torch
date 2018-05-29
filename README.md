@@ -64,6 +64,7 @@ Example line:
 Then run:
 
     python preprocess.py custom /path/to/word2vec.bin --train /path/to/train/data --test /path/to/test/data --dev /path/to/dev/data
+    python preprocess.py custom /home/icc-qi/sent-conv-torch-master/GoogleNews-vectors-negative300.bin --train /home/icc-qi/sent-conv-torch-master/torch/data_set_abs --custom_name patent
 
 The output file's name can be set with the flag `--custom_name` (default is named custom).
 
