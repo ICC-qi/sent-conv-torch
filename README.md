@@ -194,3 +194,13 @@ CNNinput.py:输入语句，自动转化为索引数字，(1,64)的向量，作�
 ## RebuildCNN
 
 因为nn.gModule不适合修改，所以使用cunn重新搭建了模型，见rebuildCNN.lua，并复制参数到新的网络中。经过测试（与test.lua）得到同样的输出。输出是300维向量，去掉了后面分类的操作。
+
+## Savingvector.lua
+
+保存文本通过CNN的300维特征向量，保存格式为hdf5，方便python调用。
+python调用文件示例为hdf5vector_read_demo.py
+
+## 自定义数据集的命令
+
+    > python preprocess.py custom /home/icc-qi/sent-conv-torch-master/GoogleNews-vectors-negative300.bin --train /home/icc-qi/sent-conv-torch-master/torch/data_set_abs_section --custom_name patentsection
+    > th main.lua -data patentsection.hdf5 -cudnn 1 -gpuid 1 -folds 3
